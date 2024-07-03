@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+  --linear1: 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
+  --Linear2: 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%);
+}
+
+.heading {
+  padding: 0.2rem 2rem;
+}
+
+.heading .logo {
+  background-image: url("images/logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 7rem;
+  height: 5rem;
+}
+
+.hero_mobile {
+  width: 100%;
+  background-image: url("images/hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.hero_desktop {
+  display: none;
+}
+
+.announcement {
+  display: flex;
+  flex-direction: column;
+  font-family: "Josefin sans"; 
+  padding: 0 1rem;
+  max-width: 30rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.announcement_title {
+  margin: 5rem 0 2.5rem;
+  text-align: center;
+  font-size: clamp(1.5em, 4vw, 5em);
+}
+
+.announcement_title p {
+  font-weight: 200;
+  color: var(--desaturated-red);
+  /* color: hsl(0, 70%, 65%);
+  */
+  letter-spacing: 0.4em;
+}
+
+.announcement_title div {
+  letter-spacing: 0.4em;
+  font-weight: 600;
+}
+
+.announcement_paragraph {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 0.9em;
+  color: var(--soft-red);
+}
+
+.subscribe {
+  width: 100%;
+  position: relative;
+}
+
+.subscribe_email {
+  width: 100%;
+  border: none;
+  border: 0.1rem solid var(--desaturated-red);
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+}
+
+.subscribe_email::placeholder {
+  color: hsl(0, 73%, 61%);
+}
+
+.subscribe_button {
+  background-image: linear-gradient(90deg, hsl(0, 70%, 85%), hsl(0, 70%, 65%));
+  /* 
+background-image: url("images/icon-arrow.svg"), linear-gradient(90deg, hsl(0, 70%, 85%), hsl(0, 70%, 65%));
+    background-repeat: no-repeat;
+    background-position: center; */
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 5rem;
+  height: 3.1rem;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.subscribe_button:hover {
+  box-shadow: 0.2rem 0.2rem 0.3rem 0.2rem rgba(0, 0, 0, 0.151);
+}
+
+.attribution {
+  padding: 1rem;
+  text-align: center;
+  margin: 5rem 0 0;
+}
+
+.icon-error {
+  display: none;
+  position: absolute;
+  right: 5.5rem;
+  bottom: 0;
+  top: 0.8rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#error-msg {
+  font-size: 0.8em;
+  margin: 0.5rem 0 0 1rem;
+  color: var(--soft-red);
+}
+
+@media (min-width: 50rem) {
+  body {
+    height: 100vh;
+  }
+  .heading {
+    position: absolute;
+  }
+  .announcement_container {
+    display: flex;
+    gap: 5vw;
+    flex-direction: row-reverse;
+    justify-content: stretch;
+  }
+
+  .announcement {
+    max-width: 30rem;
+    padding-inline: 2rem;
+    align-self: center;
+  }
+
+  .announcement_title {
+    text-align: left;
+    width: 100%;
+  }
+
+  .announcement_paragraph {
+    text-align: left;
+  }
+
+  .hero_mobile {
+    display: none;
+  }
+
+  .hero_desktop {
+    display: block;
+    background-image: url("images/hero-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+  }
+}
